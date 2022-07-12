@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Afficheur météo:  Fichier source de Afficheur.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  <td id="projectlogo"><img alt="Logo" src="meteo.jpg"/></td>
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Afficheur météo
+   &#160;<span id="projectnumber">1.3</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Afficheur.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_afficheur_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00063"></a>00063 <span class="preprocessor">#ifndef AFFICHEUR_H</span>
+<a name="l00064"></a>00064 <span class="preprocessor"></span><span class="preprocessor">#define AFFICHEUR_H</span>
+<a name="l00065"></a>00065 <span class="preprocessor"></span>
+<a name="l00066"></a>00066 <span class="preprocessor">#include &quot;Ligne.h&quot;</span>
+<a name="l00067"></a>00067 <span class="preprocessor">#include &quot;PortSerieAfficheur.h&quot;</span>
+<a name="l00068"></a>00068 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 <span class="keyword">using namespace </span>std;
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072 <span class="preprocessor">#define DEBUG</span>
+<a name="l00073"></a>00073 <span class="preprocessor"></span>
+<a name="l00074"></a>00074 
+<a name="l00076"></a>00076 
+<a name="l00097"></a><a class="code" href="class_afficheur.html">00097</a> <span class="keyword">class </span><a class="code" href="class_afficheur.html" title="La classe Afficheur est une classe outil de gestion d&#39;un afficheur à LED appeler plus communément un ...">Afficheur</a>
+<a name="l00098"></a>00098 {
+<a name="l00099"></a>00099 <span class="keyword">public</span>:
+<a name="l00101"></a>00101 
+<a name="l00105"></a>00105     <a class="code" href="class_afficheur.html" title="La classe Afficheur est une classe outil de gestion d&#39;un afficheur à LED appeler plus communément un ...">Afficheur</a>();
+<a name="l00107"></a>00107 
+<a name="l00111"></a>00111     ~<a class="code" href="class_afficheur.html" title="La classe Afficheur est une classe outil de gestion d&#39;un afficheur à LED appeler plus communément un ...">Afficheur</a>();
+<a name="l00112"></a>00112 
+<a name="l00113"></a>00113         <span class="comment">/* Méthodes d&#39;accès &#39;set&#39; et &#39;get&#39; de l&#39;attribut &#39;m_identifiant&#39; */</span>
+<a name="l00115"></a>00115 
+<a name="l00119"></a><a class="code" href="class_afficheur.html#abcd817a98e6cff9d5c738699eae68098">00119</a>         <span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_afficheur.html#abcd817a98e6cff9d5c738699eae68098" title="Méthode d&#39;accès permettant de récupérer la valeur de l&#39;identifiant de l&#39;afficheur.">getIdentifiant</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_identifiant;}
+<a name="l00120"></a>00120 
+<a name="l00122"></a>00122 
+<a name="l00126"></a><a class="code" href="class_afficheur.html#ab00ed830d0a27400456db5c882514c3f">00126</a>         <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_afficheur.html#ab00ed830d0a27400456db5c882514c3f" title="Méthode d&#39;accès permettant d&#39;indiquer l&#39;identifiant de l&#39;afficheur que vous utilisez.">setIdentifiant</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> identifiant) {m_identifiant = identifiant;}
+<a name="l00127"></a>00127         
+<a name="l00129"></a>00129 
+<a name="l00134"></a>00134         <span class="keywordtype">bool</span> changerIdentifiant( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> identifiant);
+<a name="l00135"></a>00135         
+<a name="l00136"></a>00136 
+<a name="l00138"></a>00138 
+<a name="l00143"></a>00143         <span class="keywordtype">bool</span> ouvrirPortSerie(<span class="keywordtype">string</span> nomPortSerie);
+<a name="l00144"></a>00144 
+<a name="l00146"></a>00146 
+<a name="l00150"></a>00150         <span class="keywordtype">bool</span> fermerPortSerie();
+<a name="l00151"></a>00151         
+<a name="l00153"></a>00153 
+<a name="l00158"></a>00158         <span class="keywordtype">bool</span> setNombrePages(<span class="keywordtype">int</span> nombrePages);
+<a name="l00159"></a>00159         
+<a name="l00161"></a>00161 
+<a name="l00165"></a><a class="code" href="class_afficheur.html#a5fde60143a5af4277b0f8a4d502056c3">00165</a>         <span class="keywordtype">void</span> <a class="code" href="class_afficheur.html#a5fde60143a5af4277b0f8a4d502056c3" title="Méthode d&#39;accès permettant de modifier l&#39;adresse IP du serveur UDP.">setAdresseIPServeurUDP</a>(<span class="keywordtype">string</span> adresseIPServeurUDP) {m_adresseIPServeurUDP = adresseIPServeurUDP;}
+<a name="l00166"></a>00166         
+<a name="l00167"></a>00167         <span class="keywordtype">void</span> setPortServeurUDP(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> portServeurUDP) {m_portServeurUDP = portServeurUDP;}
+<a name="l00168"></a>00168         
+<a name="l00169"></a>00169         
+<a name="l00170"></a>00170         <span class="comment">/* Méthode : configurer (nomPortSerie : const char *, identifiant : unsigned char) : void */</span>
+<a name="l00171"></a>00171         <span class="comment">//bool configurer (const char * nomPortSerie, unsigned int identifiant = 0);</span>
+<a name="l00172"></a>00172 
+<a name="l00174"></a>00174 
+<a name="l00179"></a>00179         <span class="keywordtype">bool</span> envoyerTrame(<span class="keyword">const</span> <span class="keywordtype">char</span> * trame, <span class="keywordtype">int</span> longueurTrame);
+<a name="l00180"></a>00180         <span class="keywordtype">bool</span> envoyerTrame(<span class="keywordtype">string</span> trame);
+<a name="l00181"></a>00181         
+<a name="l00183"></a>00183 
+<a name="l00188"></a>00188         <span class="keywordtype">bool</span> envoyerLigne(<a class="code" href="class_ligne.html">Ligne</a> ligne);
+<a name="l00189"></a>00189 
+<a name="l00190"></a>00190         
+<a name="l00192"></a>00192 
+<a name="l00197"></a>00197         <span class="keywordtype">bool</span> envoyerTrameEnUDP(<span class="keyword">const</span> <span class="keywordtype">char</span> * trame, <span class="keywordtype">int</span> longueurTrame);
+<a name="l00198"></a>00198         <span class="keywordtype">bool</span> envoyerTrameEnUDP(<span class="keywordtype">string</span> trame);
+<a name="l00199"></a>00199 
+<a name="l00201"></a>00201 
+<a name="l00206"></a>00206         <span class="keywordtype">bool</span> envoyerLigneEnUDP(<a class="code" href="class_ligne.html">Ligne</a> ligne);
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208         
+<a name="l00210"></a>00210 
+<a name="l00213"></a>00213         <span class="keywordtype">bool</span> actualiserDateHeure();
+<a name="l00214"></a>00214         
+<a name="l00215"></a>00215         <span class="keywordtype">string</span> descriptionErreur() <span class="keyword">const</span>;
+<a name="l00216"></a>00216 
+<a name="l00217"></a>00217 <span class="keyword">private</span>:
+<a name="l00218"></a>00218         <span class="keyword">typedef</span> <span class="keyword">enum</span> {AUCUNE, ID1, ID2, ID3 }Erreur;
+<a name="l00219"></a>00219         <span class="keyword">static</span> <span class="keywordtype">int</span> nbTrameUDP;
+<a name="l00220"></a>00220         <a class="code" href="class_port_serie_afficheur.html" title="Classe de communication avec l&#39;afficheur.">PortSerieAfficheur</a> m_portSerie;                 
+<a name="l00221"></a>00221         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> m_identifiant;     
+<a name="l00222"></a>00222         Erreur m_erreur;
+<a name="l00223"></a>00223         <span class="comment">//unsigned char calculerChecksum(const char * message) const; /*!&lt; Méthode renvoyant le checksum d&#39;un message passé en argument.*/</span>
+<a name="l00224"></a>00224         <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> calculerChecksum(<span class="keywordtype">string</span> message) <span class="keyword">const</span>;
+<a name="l00225"></a>00225         <span class="keywordtype">string</span> m_adresseIPServeurUDP;
+<a name="l00226"></a>00226         <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> m_portServeurUDP;
+<a name="l00227"></a>00227 };
+<a name="l00228"></a>00228 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche Septembre 14 2014 22:56:01 pour Afficheur météo par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

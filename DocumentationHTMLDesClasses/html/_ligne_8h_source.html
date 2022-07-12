@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Afficheur météo:  Fichier source de Ligne.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  <td id="projectlogo"><img alt="Logo" src="meteo.jpg"/></td>
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Afficheur météo
+   &#160;<span id="projectnumber">1.3</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Ligne.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef LIGNE_H</span>
+<a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define LIGNE_H</span>
+<a name="l00003"></a>00003 <span class="preprocessor"></span>
+<a name="l00004"></a>00004 <span class="preprocessor">#include &lt;string.h&gt;</span>
+<a name="l00005"></a>00005 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00006"></a>00006 
+<a name="l00007"></a>00007 <span class="keyword">using namespace </span>std;
+<a name="l00008"></a>00008 
+<a name="l00010"></a>00010 
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019 <span class="keyword">typedef</span> <span class="keyword">enum</span> {  
+<a name="l00020"></a>00020   LEADING_IMMEDIATE = 0 ,
+<a name="l00021"></a>00021   LEADING_XOPEN ,
+<a name="l00022"></a>00022   LEADING_CURTAIN_UP,
+<a name="l00023"></a>00023   LEADING_CURTAIN_DOWN,
+<a name="l00024"></a>00024   LEADING_SCROLL_LEFT,
+<a name="l00025"></a>00025   LEADING_SCROLL_RIGHT,
+<a name="l00026"></a>00026   LEADING_VOPEN,
+<a name="l00027"></a>00027   LEADING_VCLOSE,
+<a name="l00028"></a>00028   LEADING_SCROLL_UP,
+<a name="l00029"></a>00029   LEADING_SCROLL_DOWN,
+<a name="l00030"></a>00030   LEADING_HOLD,
+<a name="l00031"></a>00031   LEADING_SNOW,
+<a name="l00032"></a>00032   LEADING_TWINKLE,
+<a name="l00033"></a>00033   LEADING_BLOCK_MOVE,
+<a name="l00034"></a>00034   LEADING_RANDOM,
+<a name="l00035"></a>00035   LEADING_HELLO_WORLD,
+<a name="l00036"></a>00036   LEADING_WELCOME,
+<a name="l00037"></a>00037   LEADING_AMPLUS
+<a name="l00038"></a>00038 } EffetChargement;
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00041"></a>00041   NORMAL = 0,
+<a name="l00042"></a>00042   BLINKING,
+<a name="l00043"></a>00043   SONG_1,
+<a name="l00044"></a>00044   SONG_2,
+<a name="l00045"></a>00045   SONG_3
+<a name="l00046"></a>00046 } EffetAffichage;
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048 <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00049"></a>00049   W_0_5_SEC = 0,
+<a name="l00050"></a>00050   W_1_SEC,
+<a name="l00051"></a>00051   W_2_SEC,
+<a name="l00052"></a>00052   W_3_SEC,
+<a name="l00053"></a>00053   W_4_SEC,
+<a name="l00054"></a>00054   W_5_SEC,
+<a name="l00055"></a>00055   W_6_SEC,
+<a name="l00056"></a>00056   W_7_SEC,
+<a name="l00057"></a>00057   W_8_SEC,
+<a name="l00058"></a>00058   W_9_SEC,
+<a name="l00059"></a>00059   W_10_SEC,
+<a name="l00060"></a>00060   W_11_SEC,
+<a name="l00061"></a>00061   W_12_SEC,
+<a name="l00062"></a>00062   W_13_SEC,
+<a name="l00063"></a>00063   W_14_SEC,
+<a name="l00064"></a>00064   W_15_SEC,
+<a name="l00065"></a>00065   W_16_SEC,
+<a name="l00066"></a>00066   W_17_SEC,
+<a name="l00067"></a>00067   W_18_SEC,
+<a name="l00068"></a>00068   W_19_SEC,
+<a name="l00069"></a>00069   W_20_SEC,
+<a name="l00070"></a>00070   W_21_SEC,
+<a name="l00071"></a>00071   W_22_SEC,
+<a name="l00072"></a>00072   W_23_SEC,
+<a name="l00073"></a>00073   W_24_SEC,
+<a name="l00074"></a>00074   W_25_SEC
+<a name="l00075"></a>00075 } TemporisationAffichage;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 <span class="keyword">typedef</span> <span class="keyword">enum</span> {
+<a name="l00078"></a>00078   LAGGING_IMMEDIATE = 0,
+<a name="l00079"></a>00079   LAGGING_XOPEN,
+<a name="l00080"></a>00080   LAGGING_CURTAIN_UP,
+<a name="l00081"></a>00081   LAGGING_CURTAIN_DOWN,
+<a name="l00082"></a>00082   LAGGING_SCROLL_LEFT,
+<a name="l00083"></a>00083   LAGGING_SCROLL_RIGHT,
+<a name="l00084"></a>00084   LAGGING_VOPEN,
+<a name="l00085"></a>00085   LAGGING_VCLOSE,
+<a name="l00086"></a>00086   LAGGING_SCROLL_UP,
+<a name="l00087"></a>00087   LAGGING_SCROLL_DOWN,
+<a name="l00088"></a>00088   LAGGING_HOLD
+<a name="l00089"></a>00089 } EffetSortie;
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 
+<a name="l00092"></a><a class="code" href="class_ligne.html">00092</a> <span class="keyword">class </span><a class="code" href="class_ligne.html">Ligne</a>
+<a name="l00093"></a>00093 {
+<a name="l00094"></a>00094   
+<a name="l00095"></a>00095   
+<a name="l00096"></a>00096 <span class="keyword">public</span>:
+<a name="l00098"></a>00098 
+<a name="l00102"></a>00102     <a class="code" href="class_ligne.html">Ligne</a> () ;
+<a name="l00103"></a>00103     
+<a name="l00105"></a>00105 
+<a name="l00109"></a>00109     <a class="code" href="class_ligne.html">Ligne</a> ( <span class="keyword">const</span> <span class="keywordtype">char</span> * message, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> longueurMessage );
+<a name="l00110"></a>00110     <a class="code" href="class_ligne.html">Ligne</a> ( <span class="keywordtype">string</span> message );
+<a name="l00111"></a>00111     
+<a name="l00113"></a>00113 
+<a name="l00117"></a>00117     ~<a class="code" href="class_ligne.html">Ligne</a>();
+<a name="l00118"></a>00118 
+<a name="l00120"></a>00120 
+<a name="l00124"></a><a class="code" href="class_ligne.html#a0c3421d71676c4cb43872982b84bd830">00124</a>     <span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code" href="class_ligne.html#a0c3421d71676c4cb43872982b84bd830" title="Méthode d&#39;accès permettant de lire l&#39;attribut m_numeroLigne.">getNumeroLigne</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_numeroLigne;}
+<a name="l00125"></a>00125 
+<a name="l00127"></a>00127 
+<a name="l00131"></a><a class="code" href="class_ligne.html#aaa015d961954b0b0278f281f9d6a35db">00131</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_ligne.html#aaa015d961954b0b0278f281f9d6a35db" title="Méthode d&#39;accès permettant de modifier l&#39;attribut m_numeroLigne.">setNumeroLigne</a>(<span class="keywordtype">int</span> numeroLigne) {m_numeroLigne = numeroLigne; m_paquetDonnees[2] = <span class="charliteral">&#39;0&#39;</span> + numeroLigne; }
+<a name="l00132"></a>00132 
+<a name="l00134"></a>00134 
+<a name="l00138"></a><a class="code" href="class_ligne.html#aad83e035561ab730af648a8c98bbb612">00138</a>     <span class="keyword">inline</span> <span class="keywordtype">char</span> <a class="code" href="class_ligne.html#aad83e035561ab730af648a8c98bbb612" title="Méthode d&#39;accès permettant de lire l&#39;attribut m_numeroPage.">getNumeroPage</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_numeroPage;}
+<a name="l00139"></a>00139 
+<a name="l00141"></a>00141 
+<a name="l00145"></a><a class="code" href="class_ligne.html#a2345fa45b86f69c7c366906f606ac34e">00145</a>     <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_ligne.html#a2345fa45b86f69c7c366906f606ac34e" title="Méthode d&#39;accès permettant de modifier l&#39;attribut m_numeroPage.">setNumeroPage</a>(<span class="keywordtype">char</span> numeroPage) {m_numeroPage = numeroPage; m_paquetDonnees[6] = numeroPage; }
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147 
+<a name="l00148"></a>00148     <span class="comment">//inline const char * getMessage() const { return m_message;}</span>
+<a name="l00149"></a>00149     <span class="comment">//inline void setMessage(const char message[]) {strcpy(m_message,message); strcpy(m_paquetDonnees+24,message); }</span>
+<a name="l00150"></a>00150     <span class="keyword">inline</span> <span class="keywordtype">string</span> getMessage()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_message;}
+<a name="l00151"></a>00151     <span class="keyword">inline</span> <span class="keywordtype">void</span> setMessage( <span class="keywordtype">string</span> message) {m_paquetDonnees.erase(24); m_paquetDonnees += message;}
+<a name="l00152"></a>00152 
+<a name="l00153"></a>00153     <span class="keyword">inline</span> EffetChargement getEffetChargement()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_effetChargement;}
+<a name="l00154"></a>00154     <span class="keyword">inline</span> <span class="keywordtype">void</span> setEffetChargement(EffetChargement effetChargement) { m_effetChargement = effetChargement; m_paquetDonnees[10] = <span class="charliteral">&#39;A&#39;</span> + effetChargement;}
+<a name="l00155"></a>00155 
+<a name="l00156"></a>00156     <span class="keyword">inline</span> EffetAffichage getEffetAffichage()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_effetAffichage;}
+<a name="l00157"></a>00157     <span class="keyword">inline</span> <span class="keywordtype">void</span> setEffetAffichage(EffetAffichage effetAffichage) { m_effetAffichage = effetAffichage; m_paquetDonnees[14] = <span class="charliteral">&#39;A&#39;</span> + effetAffichage; }
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159     <span class="keyword">inline</span> TemporisationAffichage getTemporisationAffichage()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_temporisationAffichage;}
+<a name="l00160"></a>00160     <span class="keyword">inline</span> <span class="keywordtype">void</span> setTemporisationAffichage(TemporisationAffichage temporisationAffichage) { m_temporisationAffichage = temporisationAffichage; m_paquetDonnees[18] = <span class="charliteral">&#39;A&#39;</span> + temporisationAffichage;}
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162     <span class="keyword">inline</span> EffetSortie getEffetSortie()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_effetSortie;}
+<a name="l00163"></a>00163     <span class="keyword">inline</span> <span class="keywordtype">void</span> setEffetSortie(EffetSortie effetSortie) { m_effetSortie = effetSortie; m_paquetDonnees[22] = <span class="charliteral">&#39;A&#39;</span> + effetSortie;}
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165     <span class="comment">/* Autres méthodes */</span>
+<a name="l00166"></a>00166 <span class="comment">//    inline const char * getPaquetDonnees() const {return m_paquetDonnees;};</span>
+<a name="l00167"></a>00167     <span class="keyword">inline</span> <span class="keywordtype">string</span> getPaquetDonnees()<span class="keyword"> const </span>{<span class="keywordflow">return</span> m_paquetDonnees;}
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169 <span class="keyword">private</span>:
+<a name="l00170"></a>00170 
+<a name="l00171"></a>00171     <span class="comment">// Le message à afficher</span>
+<a name="l00172"></a>00172     <span class="comment">//char m_message[15];</span>
+<a name="l00173"></a>00173     <span class="keywordtype">string</span> m_message;
+<a name="l00174"></a>00174     <span class="comment">// Le numéro de page et de ligne</span>
+<a name="l00175"></a>00175     <span class="keywordtype">int</span> m_numeroLigne;
+<a name="l00176"></a>00176     <span class="keywordtype">char</span> m_numeroPage;
+<a name="l00177"></a>00177     <span class="comment">// Les effets en entrée</span>
+<a name="l00178"></a>00178     EffetChargement m_effetChargement;
+<a name="l00179"></a>00179     EffetAffichage m_effetAffichage;
+<a name="l00180"></a>00180     TemporisationAffichage m_temporisationAffichage;
+<a name="l00181"></a>00181     EffetSortie m_effetSortie;
+<a name="l00182"></a>00182     <span class="comment">// Le message à afficher avec numéro de page, de ligne, et les effets et le checksum.</span>
+<a name="l00183"></a>00183     <span class="comment">//char m_paquetDonnees[255];</span>
+<a name="l00184"></a>00184     <span class="keywordtype">string</span> m_paquetDonnees;
+<a name="l00185"></a>00185     <span class="keywordtype">void</span> preparerPaquetDonnees();
+<a name="l00186"></a>00186 
+<a name="l00187"></a>00187 };
+<a name="l00188"></a>00188 
+<a name="l00189"></a>00189 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Dimanche Septembre 14 2014 22:56:01 pour Afficheur météo par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>
